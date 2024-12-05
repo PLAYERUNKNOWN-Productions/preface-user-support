@@ -17,7 +17,7 @@ Your go-to space for troubleshooting and guidance while exploring the _Preface: 
 - [**Steam**](https://steam.pp.studio/Preface): Find _Preface_ on Steam.
 
 ### Other Resources
-- [**Preface Privacy Notice**](https://github.com/PLAYERUNKNOWN-Productions/Preface-User-Support/blob/main/Documents/Preface%20Privacy%20Notice.docx): Information relating to Preface-related data collection and other related topics.
+- [**Preface Privacy Notice**](https://github.com/PLAYERUNKNOWN-Productions/Preface-User-Support/blob/main/Documents/PrivacyNotice.md): Information relating to Preface-related data collection and other related topics.
 - [**Preface Change Log**](https://github.com/PLAYERUNKNOWN-Productions/Preface-User-Support/blob/main/Documents/CHANGELOG.md): Change log and archive for Preface patch notes.
 
 Thank you for supporting _Preface_!

@@ -35,7 +35,7 @@ Below, you'll find solutions to common technical problems with _Preface: Undisco
 Before troubleshooting, please ensure your system meets the minimum specifications for _Preface_. Running the game on unsupported hardware may result in performance issues or the inability to play.
 
 **Minimum Requirements**
-- Processor: 6-core/12-thread CPU. E.g.: Intel i5 10500, AMD Ryzen 5 3600, or equivalent.
+- Processor: 6-core/12-thread CPU with AVX2 support - AMD Ryzen 5 3600 / Intel i5 10500.
 - Memory: 16 GB RAM.
 - Graphics: GPU with Sampler Feedback and Mesh Shaders - AMD RX 6600 / NVIDIA RTX 2060.
 - Storage: 10 GB available space.

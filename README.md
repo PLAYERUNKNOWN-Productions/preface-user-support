@@ -184,6 +184,7 @@ This page lists known issues in the _Preface: Undiscovered World_ tech demo. The
   3. Find the Scale & layout section
   4. Change Scale to 100%
   - If the settings are too small to use or you are too “zoomed out”, you can use the magnifier by holding the Windows logo key and pressing the Plus (+) sign.
+- **Switching shadow type in settings, without shader cache, can lead to compilation stalls.** Status: Investigating. Description: Switching shadows types (typically 2 cascades + global shadow map to 3 cascades) in the settings without a shader cache can sometimes lead to compilation stalls, typically for around 10 seconds.
 
 ### How to Use This List
 

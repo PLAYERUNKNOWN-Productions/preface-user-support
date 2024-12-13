@@ -1,5 +1,31 @@
 # Changelog
 
+## v0.1.3
+
+### Features
+
+* Provide a more click-able format for deeplinks
+  * [See the new deeplink documentation](https://github.com/PLAYERUNKNOWN-Productions/Preface-User-Support/wiki/A-Guide-to-DeepLink-(Fast-Travelling-in-Preface))
+* PST-2504 - Improve unsupported hardware and OS detection and user-facing messaging
+
+### Fixes
+
+* Windowing
+  * PST-2461 - Prevent mouse being captured in full screen mode with DPI scaling
+  * PST-2462 - Handle updating UI hitboxes when switching to Borderless Fullscreen from Exclusive Fullscreen with a non-desktop resolution
+  * PST-2440 - Fix Preface logo getting drawn before ui scaling is calculated
+* Logging
+  * Ensure the last line of logs is always added to output
+* Performance
+  * Fix memory leak in and optimize `string_builder`
+  * PST-2470 - Prevent new waypoints requests during flight and ensure they are streamed in when landing
+* Crashes
+  * PST-2447 - Fix render model load crash
+    * When a model is no longer used, don't destroy its resources if an async job is working on processing textures for it
+* Troubleshooting
+  * `reset_preface.bat` now also deletes the shader cache
+    * This works around an issue where occasionally the cache could be corrupted
+
 ## v0.1.2
 Day 1 Patch
 

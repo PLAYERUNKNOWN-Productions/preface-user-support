@@ -1,5 +1,36 @@
 # Changelog
 
+## v0.1.4
+
+### Known Issues
+
+* Multi monitor setups may show the window on the wrong monitor.
+* Windowed mode allows setting a too large resolution, which does not fit on screen. Use alt-enter to fix it.
+* Sometimes when switching display mode and resolution simultaneously, the resolution will not be applied.
+
+### Features
+
+* You can now set resolution in borderless fullscreen.
+* You can now opt in or out of sending analytics data from the settings menu.
+
+### Fixes
+
+* Performance:
+  * Improved Atmospheric Scattering frametime by 33% by using float16 for the LUT format.
+* Logging:
+  * Fix a bug where long messages are truncated.
+  * Redesigned and simplified a bunch of internal APIs around logging which should improve quality of logs.
+* UI:
+  * Scale the "Confirm" button in the postcard interface with the resolution.
+* Crashes:
+  * Avoid a highly annoying crash where we can set the screenshot readback buffer to not match the swapchain size.
+    * This one was tricky to hunt down because many graphics cards don't crash, despite it being clearly wrong.
+  * Improved unsupported hardware detection to use hardware features instead of names.
+  
+### Invisible Work
+
+* A large amount of work has been done to reduce tech debt following the first release and help prepare for future work.
+
 ## v0.1.3
 
 ### Features

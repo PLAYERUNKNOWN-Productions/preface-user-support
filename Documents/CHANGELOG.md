@@ -1,5 +1,32 @@
 # Changelog
 
+## v0.1.5
+
+### Known Issues
+
+* Multi monitor setups may show the window on the wrong monitor.
+* Windowed mode allows setting a too large resolution, which does not fit on screen. Use alt-enter to fix it.
+* Sometimes when switching display mode and resolution simultaneously, the resolution will not be applied.
+
+### Features
+
+* Added LUT-based color correction, allowing custom color grading based on screenshots in the future. (PST-2131)
+* Added a new API for logging and asserts which should improve detection of issues (PST-2006)
+
+### Fixes
+
+* Rendering Improvements
+    * Instancing & occlusion optimizations
+    * Optimized atmospheric scattering, reducing render time by up to 0.5ms (PST-1890)
+* Stability Improvements
+    * Fixed incorrect handling of resource counts in the rendering abstraction layer
+    * Early exit mechanism added to prevent crashes when the GPU device is unavailable
+    * Improved handling of minimum VRAM requirements to ensure compatibility with lower-end hardware.
+
+### Invisible Work
+
+* More work has been done to reduce tech debt following the first release and help prepare for future work.
+
 ## v0.1.4
 
 ### Known Issues

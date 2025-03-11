@@ -8,7 +8,7 @@ Your go-to space for troubleshooting and guidance while exploring the _Preface: 
 ### Links for Support
 - [**Technical Support FAQ**](https://github.com/PLAYERUNKNOWN-Productions/Preface-User-Support/blob/main/README.md#technical-support-faq): Find answers to common technical issues and solutions.
 - [**User Guide: A Guide for the Perplexed**](https://github.com/PLAYERUNKNOWN-Productions/Preface-User-Support/blob/main/README.md#user-guide-a-guide-for-the-perplexed): Learn how to engage with _Preface_ and contribute to its development
-- [**Known Issues List**](https://github.com/PLAYERUNKNOWN-Productions/Preface-User-Support/blob/main/README.md#known-issues-list): Check for current bugs and their status before reporting new ones.
+- [**Change Log**](https://github.com/PLAYERUNKNOWN-Productions/Preface-User-Support/blob/main/Documents/CHANGELOG.md): Change log and archive for Preface patch notes, including known issues with the build.
 - [**How to Report a Bug**](https://github.com/PLAYERUNKNOWN-Productions/Preface-User-Support/blob/main/README.md#how-to-report-a-bug): Step-by-step instructions for submitting clear and helpful bug reports.
 
 ### Join the Community
@@ -18,7 +18,6 @@ Your go-to space for troubleshooting and guidance while exploring the _Preface: 
 
 ### Other Resources
 - [**Preface Privacy Notice**](https://github.com/PLAYERUNKNOWN-Productions/Preface-User-Support/blob/main/Documents/PrivacyNotice.md): Information relating to Preface-related data collection and other related topics.
-- [**Preface Change Log**](https://github.com/PLAYERUNKNOWN-Productions/Preface-User-Support/blob/main/Documents/CHANGELOG.md): Change log and archive for Preface patch notes.
 
 Thank you for supporting _Preface_!
 
@@ -161,38 +160,6 @@ If you’re interested in learning more about _Preface_ or connecting with other
 - Find our [technical support page for more advice on troubleshooting and engaging with _Preface_](https://github.com/PLAYERUNKNOWN-Productions/Preface-User-Support/blob/main/README.md#technical-support-faq).
 
 Thank you for exploring with us!
-
-![Red PP Sign](https://github.com/user-attachments/assets/b47ffe6a-97a7-4a17-b48a-70d363db45f1)
-
-[Back to the top](https://github.com/PLAYERUNKNOWN-Productions/Preface-User-Support?tab=readme-ov-file#preface-undiscovered-world)
-
----
-
-## Known Issues List
-
-This page lists known issues in the _Preface: Undiscovered World_ tech demo. These are bugs or limitations we are aware of.
-
-### Current Known Issues
-- **Using Alt+Enter can cause issues**. Status: Investigating. Description: When using Alt+Enter to switch between Windowed and Fullscreen, it may cause some issues with player settings, especially while the settings menu is open. We recommend not using this for now, but if you encounter issues, restarting Preface: Undiscovered World should fix the issue.
-- **Terminal displaying when using Windows Terminal**. Status: Investigating. Description: If you use Windows Terminal as your default Shell, the Terminal will not be correctly hidden when loading. More information about this here.
-- **Occasional texture corruption**. Status: Investigating. Description: Occasionally, white squares will show on the ground.
-- **Nearby Waypoints do not always display**. Status: Investigating. Description: Sometimes, when you return to a waypoint, the waypoint asset may not show, but it is still there. This may happen more frequently when you are jumping frequently between waypoints.
-- **No waypoints displayed in game if the game fails to connect to the backend**. Status: Investigating. Description: If you start the game and fail to connect to the server during the loading screen, Waypoints will not be loaded.
-- **DPI scaling may interfere with resolution settings and mouse usage in menus**. Status: Investigating. Description: Particularly in Fullscreen modes, DPI scaling may interfere with resolution settings and can cause issues using your mouse in menus. Workaround:
-  1. Go to Start -> Control Panel
-  2. Navigate to Display settings
-  3. Find the Scale & layout section
-  4. Change Scale to 100%
-  - If the settings are too small to use or you are too “zoomed out”, you can use the magnifier by holding the Windows logo key and pressing the Plus (+) sign.
-- **Switching shadow type in settings, without shader cache, can lead to compilation stalls.** Status: Investigating. Description: Switching shadows types (typically 2 cascades + global shadow map to 3 cascades) in the settings without a shader cache can sometimes lead to compilation stalls, typically for around 10 seconds.
-
-### How to Use This List
-
-1. **Check Here First**: If you encounter a problem, see if it’s listed here before submitting a bug report.
-1. **Follow Status Updates**: Keep an eye on the issue's status for progress updates.
-If your issue isn’t listed here, [please report it using our Community Bug Submission page](https://github.com/PLAYERUNKNOWN-Productions/Preface-User-Support/blob/main/README.md#how-to-report-a-bug) to help us investigate and resolve it.
-
-Thank you for supporting _Preface_ and helping us improve!
 
 ![Red PP Sign](https://github.com/user-attachments/assets/b47ffe6a-97a7-4a17-b48a-70d363db45f1)
 

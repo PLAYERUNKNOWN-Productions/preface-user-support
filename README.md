@@ -82,7 +82,7 @@ Note: If the batch file does not resolve the issue, ensure you are running it wi
 
 ### Additional Resources and Community Support
 
-- [**Known Issues**](https://github.com/PLAYERUNKNOWN-Productions/Preface-User-Support/blob/main/README.md#known-issues-list): Check our Known Issues list to see if your issue is already being tracked and get updates on its status.
+- [**Changelog and Known Issues**](https://github.com/PLAYERUNKNOWN-Productions/preface-user-support/blob/main/Documents/CHANGELOG.md#changelog): Check our Changelog for updates and known issues, to see if your issue is already being tracked and get updates on its status.
 - [**Community Bug Submission**](https://github.com/PLAYERUNKNOWN-Productions/Preface-User-Support/blob/main/README.md#how-to-report-a-bug): If you’re encountering a bug that’s not listed, report it via our Community Bug Submission page.
 - [**Peer-to-Peer Troubleshooting on Discord**](https://go.pp.studio/Discord): Join our Discord server to connect with other players for peer-to-peer troubleshooting. You may also get the chance to interact with the development team, though please note that as a small studio, we do not offer personalized support.
 - [**User Guide: A Guide for the Perplexed**](https://github.com/PLAYERUNKNOWN-Productions/Preface-User-Support/blob/main/README.md#user-guide-a-guide-for-the-perplexed): For guidance on how to engage with _Preface_ as a user, to help you navigate and enjoy the world and community of _Preface_.

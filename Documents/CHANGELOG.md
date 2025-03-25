@@ -7,7 +7,7 @@
 * Switching to Windowed mode from Borderless Fullscreen can cause the title bar to be out of your monitor's resolution
     * This is already fixed internally and will be fixed with the next patch
 * The current texture upsampling model generates some artifacts, rainbow-coloured areas. This will be fixed next model updates.
-* There are noticeable seams along the quadtree borders at large scale. This is caused by the basemaps currently not being seamless. There will be a new update of the basemap with seamles borders.
+* There are noticeable seams along the quadtree borders at large scale. This is caused by the basemaps currently not being seamless. There will be a new update of the basemap with seamless borders.
  
 ### Features
 

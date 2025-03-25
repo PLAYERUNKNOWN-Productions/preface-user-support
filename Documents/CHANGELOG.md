@@ -1,5 +1,49 @@
 # Changelog
 
+## v0.1.6
+
+### Known Issues
+
+* Switching to Windowed mode from Borderless Fullscreen can cause the title bar to be out of your monitor's resolution
+    * This is already fixed internally and will be fixed with the next patch
+* The current texture upsampling model generates some artifacts, rainbow-coloured areas. This will be fixed next model updates.
+* There are noticeable seams along the quadtree borders at large scale. This is caused by the basemaps currently not being seamless. There will be a new update of the basemap with seamles borders.
+ 
+### Features
+
+* Added a fixed altitude flying camera mode (Q/E keys and gamepad)
+    * Prevent waypoint requests whilst above a certain altitude to avoid network saturation
+* LOD/Impostor transition
+    * Impostors now consistently appear once you exceed the farthest geometric LOD, avoiding sudden disappearances in distant scenery.
+* Log Driver Version
+    * We now log the user's driver version on startup, as this information can help us understand and fix bugs
+      
+### Fixes
+
+* Addressed several shutdown, invalid-entity, and concurrency edge cases
+* Rendering
+    * Fixed motion vectors and perspective-correct velocity calculations
+    * Motion Blur: Correctly handles colour and velocity buffers of different sizes
+    * Correctly clears and updates sorted instance counters for occlusion
+    * Improved performance of Atmospheric Scattering by slightly reducing sample counts
+* Planet
+    * Properly applies configured planet radius (removes hard-coded Earth radius)
+        * Resolved far-plane NaN issues at small planet sizes
+        * There are still a lot of known issues for non-earth sized planets
+          
+### Invisible/Upcoming Work
+
+* ECS Concurrency & Refactoring
+    * Introduced automatic deferral of ECS modifications, thread-local recorders, and concurrency detection
+    * Removed or refactored deprecated systems (e.g. old texture load, physics, sim-state)
+    * Consolidated typed entity-access APIs for simpler and safer ECS usage
+* Prototypes
+    * Note: some prototypes require compile-time changes and cannot be enabled through SQL configuration - but others can.
+    * Oceans
+    * Height and Distance Fog
+    * Using the Docking branch for Dear ImGui - allowing developer UI to be moved outside the main window
+
+
 ## v0.1.5
 
 ### Known Issues

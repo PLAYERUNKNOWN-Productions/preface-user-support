@@ -47,6 +47,19 @@ Before troubleshooting, please ensure your system meets the minimum specificatio
 
 If your system does not meet the minimum requirements, we recommend upgrading your hardware to ensure optimal performance.
 
+### Fix: “vcruntime140.dll missing” or other VC Redistributable errors
+1. Close the game and its launcher. End any leftover processes in Task Manager.
+2. Download the current Microsoft VC++ Redistributable (64-bit): https://aka.ms/vs/17/release/vc_redist.x64.exe
+    - Use the 32-bit link only if you’re on 32-bit Windows: https://aka.ms/vs/17/release/vc_redist.x86.exe
+3. Run the installer. Click Yes → I agree → Install (or Repair).
+4. Restart your PC.
+5. Launch the game. The error should be gone.
+
+If issues persist
+- Install pending Windows updates and reboot.
+- Ensure your antivirus didn’t quarantine the installer or game files.
+- Send us a screenshot of the exact error and what you’ve tried so far.
+
 ### Update Your Graphics Drivers
 We're using the latest technological advancements, so updated drivers are a must. Outdated drivers can cause performance issues or crashes in Preface. Please ensure your graphics drivers are up to date.
 

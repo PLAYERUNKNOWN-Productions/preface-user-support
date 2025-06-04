@@ -1,5 +1,110 @@
 # Changelog
 
+## v0.2.0
+
+### Known Issues
+
+* The new ML model produces occasional straight-line artifacts at tile edges; a new base map is planned to fix this
+* Waypoints have been reset to accommodate for changes to terrain generation
+* Terrain horizontal displacement is disabled until camera system support is added, to avoid the camera going under the terrain
+* Enabling 'Hardware Raytracing' while setting 'Hardware Raytracing Mode' to Off may cause the app to crash after some time
+
+### Features
+
+#### World
+* New ML terrain model with improved mountains & elevation
+* Work has been done to improve the appearance of all in-game population assets (LOD's, normals, impostors) (PST-2998)
+
+#### Rendering
+* Ray-tracing (experimental) can now be enabled via the settings menu (PST-1748)
+* Added tone mapping & colour-grading to make the world look more vibrant (PST-3171)
+* Added FSR & DLSS support (PST-3130)
+* Added FSR & DLSS based anti-aliasing support (PST-3320)
+* Added two-pass HiZ occlusion culling to increase rendering performance
+* Updated SMAA to the latest version
+* Lazily loaded the cloud textures to improve performance
+* Impostors support cascaded shadow maps (PST-2084)
+
+
+#### Gameplay
+* Iterated on waypoints
+  * Interact with a waypoint to get a periscope view and 'race' to visible waypoints in the distance (PST-3076/3077/3334/3335)
+  * Users can now create up to 10 waypoints, up from 4
+  * Created waypoints spawn in front of you (PST-3333)
+  * Owned waypoints are now white, non-owned are black
+  * Waypoints are now updated every 10 seconds, allowing you to see waypoints placed in near real-time (PST-2478)
+
+#### Application
+* Added a splash screen which covers up the planet until it's ready to be shown (PST-3344)
+* Showing input hints for undocumented controls (Q & E - up and down) and fix conflicting inputs
+* Added a setting to invert vertical mouse movement (PST-2486, https://github.com/PLAYERUNKNOWN-Productions/Preface-User-Support/issues/3)
+
+### Fixes
+
+* Resolved multiple existing ECS issues, uncovered by moving to a type-safe API (PST-3070/3072)
+* Fixed incorrect waypoint colours and waypoint sound-streaming crash (PST-3078/3257)
+* The latest notifications are now always downloaded from the server on start-up, even after reinstalling
+* Fixed a crash when taking a screenshot after changing resolution
+* Fixed some of the lighting on the dark side of the planet and on the GPU grass
+* The title bar now stays on screen when switching to windowed mode (https://github.com/PLAYERUNKNOWN-Productions/Preface-User-Support/issues/9)
+* Fixed various GPU crashes and rendering issues
+* Analytics are now sent to a more appropriate back-end environment
+* Stopped tracking VRAM usage each frame, increasing performance
+* Time of day should match for anyone at the same location (PST-3188)
+* Cleaned up and improved speed of shader cache generation
+* Fixed various errors that appeared when exiting the application
+* Fixed various UI scaling issues (PST-3354/3356)
+* Waypoints no longer flicker briefly when refreshed (PST-3337)
+* Postcards and waypoints windows can be closed by the same button that opened them (PST-2271)
+* Include meta-data for postcard PNG's (PST-3395)
+* Disabled horizontal displacement, to be reimplemented with CPU support (PST-3345)
+* Hide terrain unloading during shutdown (PST-3209)
+* Make UI elements more consistent and conforming to design style by unifying and reusing more code (PST-3279/2532)
+* Stop loading screen audio when starting the game via deep link (PST-3264)
+* Waypoints stream in and out at a consistent distance (PST-3339)
+* Motion blur setting re-added to user menu (PST-2310)
+
+### Invisible / Upcoming Work
+
+#### Engine
+* Rewrote ECS back-end
+  * Refactored existing implementation to comply to common constraints, making it possible to switch between ECS back-ends
+  * Integrated and evaluated several existing ECS back-ends (EnTT, Flecs)
+  * Replaced sparse array-based storage with a sparse-set based storage to reduce memory waste and cache misses
+  * Moved from a macro heavy API to a templated type-safe API to prevent accidental misuse and fixed various issues that it surfaced
+  * Deferred commands that write to the ECS for safer multi-threading (PST-3363)
+  * Separated API into public and private parts (implementation details)
+* Worked on networking / replication fundamentals
+  * Serialization
+  * RPC's
+  * Registry
+  * Testing facilities (PST-3149)
+  * Replication demo
+* Iterated on asset import tools to convert assets and import them directly into a running game (PST-3440)
+* Worked on tooling & workflows to more easily author data collection, processing and retrieval in-game to allow for further interactivity in the future
+* Added in-game voting system to solicit user feedback
+* Integrated various monitoring and profiling tools (PresentMon, GameProfiler)
+* Set up the project for more robust testing (starting with Replication)
+* Integrated robot-framework for more elaborate automated testing
+* Tracked more relevant information when a crash occurs (unsupported hardware, assert callstacks)
+* Added meta-data to the executable file
+* Moved to C++17 and started using supported features
+    * Nested namespaces
+    * Replace boost filesystem with std::filesystem
+* Adopted LLVM code guidelines
+* Worked on headless mode for the app & tooling (PST-2711)
+* Worked on project / solution generation to improve easy of use and maintainability (PST-2927, PST-3318)
+* Add automated tests for the Data & Privacy Settings popup (PST-2923)
+* Iterated on internal logging tools (PST-2849)
+
+#### Rendering
+* Implemented new GPU-profiling subsystem (PST-3190/3191/PST-2100)
+    * Timestamp / statistics queries
+    * Thread-safe context
+    * FPS histogram & debug UI
+* Integrated IMGUI multi-viewport features to support more advanced engine tooling
+* Prototyped oceans
+
 ## v0.1.6
 
 ### Known Issues

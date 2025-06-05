@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.2.1
+
+### Fixes
+
+* Fix for "Enabling 'Hardware Raytracing' while setting 'Hardware Raytracing Mode' to Off may cause the app to crash after some time"
+
 ## v0.2.0
 
 ### Known Issues
@@ -12,10 +18,12 @@
 ### Features
 
 #### World
+
 * New ML terrain model with improved mountains & elevation
 * Work has been done to improve the appearance of all in-game population assets (LOD's, normals, impostors) (PST-2998)
 
 #### Rendering
+
 * Ray-tracing (experimental) can now be enabled via the settings menu (PST-1748)
 * Added tone mapping & colour-grading to make the world look more vibrant (PST-3171)
 * Added FSR & DLSS support (PST-3130)
@@ -27,6 +35,7 @@
 
 
 #### Gameplay
+
 * Iterated on waypoints
   * Interact with a waypoint to get a periscope view and 'race' to visible waypoints in the distance (PST-3076/3077/3334/3335)
   * Users can now create up to 10 waypoints, up from 4
@@ -35,6 +44,7 @@
   * Waypoints are now updated every 10 seconds, allowing you to see waypoints placed in near real-time (PST-2478)
 
 #### Application
+
 * Added a splash screen which covers up the planet until it's ready to be shown (PST-3344)
 * Showing input hints for undocumented controls (Q & E - up and down) and fix conflicting inputs
 * Added a setting to invert vertical mouse movement (PST-2486, https://github.com/PLAYERUNKNOWN-Productions/Preface-User-Support/issues/3)
@@ -67,6 +77,7 @@
 ### Invisible / Upcoming Work
 
 #### Engine
+
 * Rewrote ECS back-end
   * Refactored existing implementation to comply to common constraints, making it possible to switch between ECS back-ends
   * Integrated and evaluated several existing ECS back-ends (EnTT, Flecs)
@@ -98,6 +109,7 @@
 * Iterated on internal logging tools (PST-2849)
 
 #### Rendering
+
 * Implemented new GPU-profiling subsystem (PST-3190/3191/PST-2100)
     * Timestamp / statistics queries
     * Thread-safe context

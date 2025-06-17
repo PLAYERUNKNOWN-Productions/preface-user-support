@@ -1,5 +1,30 @@
 # Changelog
 
+## v0.2.2
+
+### Features
+
+* Population (trees/rocks/etc.) rendering has had its limit greatly increased - leading to a great improvement in vista rendering.
+  * Note: there should only be a minor decrease in performance. If you notice a big regression, please file a bug.
+
+### Fixes
+
+* Various developer tool fixes for working with FSR/DLSS upscaling enabled.
+* Asset factory - moved importing to async jobs to retain GUI responsiveness.
+* Fixes with ML generating textures that are "out of range" causing "stripy" terrain.
+* Fix for clients generating a "null" ID from an empty string hash for analytics.
+* Optimisations for instancing cameras to share defines in a better way.
+* Avoid converting to wstring for debug names alongside the D3D12 API border - leading to a slight perf bump.
+* Don't allow our time devgui to select a time before Midnight, January 1st, 1970 - the world did not exist before that.
+* Imposter rendering now uses the correct shadow filtering - avoiding a harsh contrast with fully instanced assets.
+
+### Invisible and Upcoming Work
+
+* Restructuring the entire project to use "more modern CMake" - WIP.
+* Various Ocean Rendering improvements - unreleased.
+* Steam-based matchmaking for connecting to peers.
+
+
 ## v0.2.1
 
 ### Fixes

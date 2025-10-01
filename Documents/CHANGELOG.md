@@ -1,5 +1,75 @@
 # Changelog
 
+## v0.3.0
+### Upgrade notes
+* If you see odd visual behavior after updating (e.g., eye adaptation overcorrecting in the dark), run `reset_preface.bat`.
+    * This is required if you participated in the Discord-only `beta` program.
+### Known Issues
+* Some leaking DX12 resources
+* Ray tracing has some issues - especially with night-time lighting
+* Flying close to the ocean can occasionally cull an ocean tile, revealing terrain underneath
+### Features
+* New Worlds to Explore!
+  * [Mars](https://preface.pp.studio/bookmarks?longitude=1.697918&latitude=1.233565&altitude=4904896.146613&rotation=-1.046682,1.229226,-1.350954&name=copy_paste&planet_name=mars)
+  * [Anesidora](https://preface.pp.studio/bookmarks?longitude=1.025059&latitude=0.589193&altitude=1307462.748291&rotation=0.494822,1.025310,-0.436434&name=copy_paste&planet_name=anesidora)
+  * [Dractun](https://preface.pp.studio/bookmarks?longitude=1.218139&latitude=0.296138&altitude=654587.519777&rotation=-0.023325,1.094185,-1.146599&name=copy_paste&planet_name=Dractun)
+  * [Zihan](https://preface.pp.studio/bookmarks?longitude=-0.681305&latitude=0.094576&altitude=325984.006943&rotation=1.184866,1.166104,1.806963&name=copy_paste&planet_name=Zihan)
+  * [Blondewalnut](https://preface.pp.studio/bookmarks?longitude=1.612719&latitude=0.435415&altitude=333011.867676&rotation=-0.219122,-0.395727,-1.070052&name=copy_paste&planet_name=blondewalnut)
+  * You can also navigate to all planets available [here](https://playerunknown-productions.github.io/preface-globe-navigator/)
+  * Note: Run the updated app once to enable the feature and close it every time you want to switch planet
+  * Deeplinks: you can jump straight to a planet via the `planet_name` url parameter (works with bookmarks)
+* Oceans
+  * We’ve added our first iteration of planet-scale water – oceans now appear on planets, bringing us one step closer to a living Earth-like world
+  * This works on any size of planet
+  * In User Mode, the ocean will prevent the user from flying into it with a minimum altitude
+* Upscalers updated:
+  * AMD FSR 2.0.0
+  * NVIDIA DLSS 310.4.0
+* Frame-rate control
+  * Simulation frame-rate is no longer locked to 60FPS
+  * New maximum frame rate option in Settings - with the possibility to uncap
+* Biome audio
+  * We now have biome-specific environmental audio
+* Planets of very different sizes now behave consistently (terrain, population density, grass, shadows, ocean rendering)
+* Visual fidelity
+  * Better-looking impostors (Night/dusk lighting on impostors is more correct)
+  * LOD cross-fading: smoother transitions between LODs
+* Ray tracing: no longer experimental
+### Fixes
+* Quad-tree splitting heuristics: more consistent LOD, fewer stalls; neighboring tiles won’t block splits
+* General stability: fewer resource stalls during tile/asset updates
+* Crash reports include more relevant log files
+* Asset pipeline fixes & improvements
+### Stability & Diagnostics
+* GPU crash dumps enabled only on NVIDIA cards (no more bad captures on unsupported GPUs)
+* BugSplat reports now auto-attach shader PDB/CSO/NVDBG—helps pinpoint shader-line crashes
+### Invisible and Upcoming Work
+* Large CMake & folder restructure
+  * "More Modern CMake" layout, public/private headers, MSVC/Clang support, C++20 default
+  * Third-party libraries integrated via CPM and built locally
+  * Project split into clearer layers to enable game team & future modders
+  * CI moved to GitLab from Jenkins
+* Replace Boost usage in preparation of Boost removal
+  * Filesystem / path
+  * Program options
+  * String view
+* Replace SQLite config files with JSON-based text files
+* Tag-based procedural population (WIP)
+  * Tag assets with meta-data such as elevation, precipitation, etc. and see them spawn in the game!
+  * Blender plugin for importing and exporting gltf files with tags
+  * Asset pipeline support for cooking and validating assets with tags
+  * In-game asset previewer that includes tag data
+  * Loading & spawning available tagged assets in the world (WIP)
+* Networking (WIP)
+  * Tooling to measure latency and packet loss
+  * Fix various connection issues
+  * Support for Steam callbacks and network events
+  * State replication for remote agents
+  * RPCs to issue commands to remote agents
+  * Entity ownership
+  * Demos for the above
+
+
 ## v0.2.2
 
 ### Features

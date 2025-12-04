@@ -15,6 +15,7 @@ Your go-to space for troubleshooting and guidance while exploring the _Preface: 
 - [**Discord**](https://go.pp.studio/Discord): Join the PLAYERUNKNOWN Productions Discord to connect with other users, share feedback, and talk with the dev team.
 - [**Website**](https://go.pp.studio/Home): Visit our official site for more about PREFACE and the Melba engine.
 - [**Steam**](https://steam.pp.studio/Preface): Find _Preface_ on Steam.
+- [**Wiki**](https://github.com/PLAYERUNKNOWN-Productions/preface-user-support/wiki): Check out the community wiki.
 
 ### Other Resources
 - [**Preface Privacy Notice**](https://github.com/PLAYERUNKNOWN-Productions/Preface-User-Support/blob/main/Documents/PrivacyNotice.md): Information relating to Preface-related data collection and other related topics.

@@ -1,5 +1,37 @@
 # Changelog
 
+## v0.4.0
+
+### Features
+
+* Switched our ML engine to ONNX Runtime (with DirectML as the backend), greatly improving our runtime agent performance
+* Implemented a new CPU task scheduler to improve CPU utilisation, parallel execution, and frame performance
+
+### Fixes
+
+* Cleaning up rendering code to avoid DirectX 12 leaking resources
+* Stabilised raytracing (caching pipelines and avoiding runtime recompilation)
+
+### Known Issues
+
+* JSON-based configuration remains fragile. If anything looks wrong, run `reset_preface.bat` to clear stale user/config data
+
+### Invisible and Upcoming Work
+
+* Further removal of `boost` (posix_time, lexical_cast)
+* Updated our assertion system and replaced any exception-throwing code within Melba
+* Launcher/plugin groundwork, made possible by our project restructure in v0.3.0
+    * This will let us ship features faster without impacting the end-user
+* Networking (WIP)
+    * Moved the existing test code into something more production-ready as a demo
+* Clouds (WIP)
+    * Some progress made, but has been put on hold for now
+* Prefabs and Tag-based Procedural Population (WIP)
+    * Continuing work on pipelines and tooling to enable iteration on data-driven (tag-based) population
+    * Internal testing suggests naive placement of population when switching to tags significantly decreases quality
+    * So we are working on improving how placement works before switching to tag-based by default
+* Ongoing refactors toward a public C++ API we plan to open-source
+
 ## v0.3.0
 
 ### Upgrade notes

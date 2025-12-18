@@ -1,14 +1,20 @@
 # Changelog
 
 ## v0.3.0
+
 ### Upgrade notes
+
 * If you see odd visual behavior after updating (e.g., eye adaptation overcorrecting in the dark), run `reset_preface.bat`.
     * This is required if you participated in the Discord-only `beta` program.
+
 ### Known Issues
+
 * Some leaking DX12 resources
 * Ray tracing has some issues - especially with night-time lighting
 * Flying close to the ocean can occasionally cull an ocean tile, revealing terrain underneath
+
 ### Features
+
 * New Worlds to Explore!
   * [Mars](https://preface.pp.studio/bookmarks?longitude=1.697918&latitude=1.233565&altitude=4904896.146613&rotation=-1.046682,1.229226,-1.350954&name=copy_paste&planet_name=mars)
   * [Anesidora](https://preface.pp.studio/bookmarks?longitude=1.025059&latitude=0.589193&altitude=1307462.748291&rotation=0.494822,1.025310,-0.436434&name=copy_paste&planet_name=anesidora)
@@ -35,40 +41,45 @@
   * Better-looking impostors (Night/dusk lighting on impostors is more correct)
   * LOD cross-fading: smoother transitions between LODs
 * Ray tracing: no longer experimental
+
 ### Fixes
+
 * Quad-tree splitting heuristics: more consistent LOD, fewer stalls; neighboring tiles won’t block splits
 * General stability: fewer resource stalls during tile/asset updates
 * Crash reports include more relevant log files
 * Asset pipeline fixes & improvements
+
 ### Stability & Diagnostics
+
 * GPU crash dumps enabled only on NVIDIA cards (no more bad captures on unsupported GPUs)
 * BugSplat reports now auto-attach shader PDB/CSO/NVDBG—helps pinpoint shader-line crashes
+
 ### Invisible and Upcoming Work
+
 * Large CMake & folder restructure
-  * "More Modern CMake" layout, public/private headers, MSVC/Clang support, C++20 default
-  * Third-party libraries integrated via CPM and built locally
-  * Project split into clearer layers to enable game team & future modders
-  * CI moved to GitLab from Jenkins
+    * "More Modern CMake" layout, public/private headers, MSVC/Clang support, C++20 default
+    * Third-party libraries integrated via CPM and built locally
+    * Project split into clearer layers to enable game team & future modders
+    * CI moved to GitLab from Jenkins
 * Replace Boost usage in preparation of Boost removal
-  * Filesystem / path
-  * Program options
-  * String view
+    * Filesystem / path
+    * Program options
+    * String view
 * Replace SQLite config files with JSON-based text files
 * Tag-based procedural population (WIP)
-  * Tag assets with meta-data such as elevation, precipitation, etc. and see them spawn in the game!
-  * Blender plugin for importing and exporting gltf files with tags
-  * Asset pipeline support for cooking and validating assets with tags
-  * In-game asset previewer that includes tag data
-  * Loading & spawning available tagged assets in the world (WIP)
+    * Tag assets with meta-data such as elevation, precipitation, etc. and see them spawn in the game!
+    * Blender plugin for importing and exporting gltf files with tags
+    * Asset pipeline support for cooking and validating assets with tags
+    * In-game asset previewer that includes tag data
+    * Loading & spawning available tagged assets in the world (WIP)
 * Networking (WIP)
-  * Tooling to measure latency and packet loss
-  * Fix various connection issues
-  * Support for Steam callbacks and network events
-  * State replication for remote agents
-  * RPCs to issue commands to remote agents
-  * Entity ownership
-  * Demos for the above
-
+    * Tooling to measure latency and packet loss
+    * Fix various connection issues
+    * Support for Steam callbacks and network events
+    * State replication for remote agents
+    * RPCs to issue commands to remote agents
+    * Entity ownership
+    * Demos for the above
 
 ## v0.2.2
 
@@ -93,7 +104,6 @@
 * Restructuring the entire project to use "more modern CMake" - WIP.
 * Various Ocean Rendering improvements - unreleased.
 * Steam-based matchmaking for connecting to peers.
-
 
 ## v0.2.1
 
@@ -128,15 +138,14 @@
 * Lazily loaded the cloud textures to improve performance
 * Impostors support cascaded shadow maps (PST-2084)
 
-
 #### Gameplay
 
 * Iterated on waypoints
-  * Interact with a waypoint to get a periscope view and 'race' to visible waypoints in the distance (PST-3076/3077/3334/3335)
-  * Users can now create up to 10 waypoints, up from 4
-  * Created waypoints spawn in front of you (PST-3333)
-  * Owned waypoints are now white, non-owned are black
-  * Waypoints are now updated every 10 seconds, allowing you to see waypoints placed in near real-time (PST-2478)
+    * Interact with a waypoint to get a periscope view and 'race' to visible waypoints in the distance (PST-3076/3077/3334/3335)
+    * Users can now create up to 10 waypoints, up from 4
+    * Created waypoints spawn in front of you (PST-3333)
+    * Owned waypoints are now white, non-owned are black
+    * Waypoints are now updated every 10 seconds, allowing you to see waypoints placed in near real-time (PST-2478)
 
 #### Application
 
@@ -174,18 +183,18 @@
 #### Engine
 
 * Rewrote ECS back-end
-  * Refactored existing implementation to comply to common constraints, making it possible to switch between ECS back-ends
-  * Integrated and evaluated several existing ECS back-ends (EnTT, Flecs)
-  * Replaced sparse array-based storage with a sparse-set based storage to reduce memory waste and cache misses
-  * Moved from a macro heavy API to a templated type-safe API to prevent accidental misuse and fixed various issues that it surfaced
-  * Deferred commands that write to the ECS for safer multi-threading (PST-3363)
-  * Separated API into public and private parts (implementation details)
+    * Refactored existing implementation to comply to common constraints, making it possible to switch between ECS back-ends
+    * Integrated and evaluated several existing ECS back-ends (EnTT, Flecs)
+    * Replaced sparse array-based storage with a sparse-set based storage to reduce memory waste and cache misses
+    * Moved from a macro heavy API to a templated type-safe API to prevent accidental misuse and fixed various issues that it surfaced
+    * Deferred commands that write to the ECS for safer multi-threading (PST-3363)
+    * Separated API into public and private parts (implementation details)
 * Worked on networking / replication fundamentals
-  * Serialization
-  * RPC's
-  * Registry
-  * Testing facilities (PST-3149)
-  * Replication demo
+    * Serialization
+    * RPC's
+    * Registry
+    * Testing facilities (PST-3149)
+    * Replication demo
 * Iterated on asset import tools to convert assets and import them directly into a running game (PST-3440)
 * Worked on tooling & workflows to more easily author data collection, processing and retrieval in-game to allow for further interactivity in the future
 * Added in-game voting system to solicit user feedback
@@ -299,16 +308,16 @@
 ### Fixes
 
 * Performance:
-  * Improved Atmospheric Scattering frametime by 33% by using float16 for the LUT format.
+    * Improved Atmospheric Scattering frametime by 33% by using float16 for the LUT format.
 * Logging:
-  * Fix a bug where long messages are truncated.
-  * Redesigned and simplified a bunch of internal APIs around logging which should improve quality of logs.
+    * Fix a bug where long messages are truncated.
+    * Redesigned and simplified a bunch of internal APIs around logging which should improve quality of logs.
 * UI:
-  * Scale the "Confirm" button in the postcard interface with the resolution.
+    * Scale the "Confirm" button in the postcard interface with the resolution.
 * Crashes:
-  * Avoid a highly annoying crash where we can set the screenshot readback buffer to not match the swapchain size.
-    * This one was tricky to hunt down because many graphics cards don't crash, despite it being clearly wrong.
-  * Improved unsupported hardware detection to use hardware features instead of names.
+    * Avoid a highly annoying crash where we can set the screenshot readback buffer to not match the swapchain size.
+        * This one was tricky to hunt down because many graphics cards don't crash, despite it being clearly wrong.
+    * Improved unsupported hardware detection to use hardware features instead of names.
   
 ### Invisible Work
 
@@ -319,59 +328,68 @@
 ### Features
 
 * Provide a more click-able format for deeplinks
-  * [See the new deeplink documentation](https://github.com/PLAYERUNKNOWN-Productions/Preface-User-Support/wiki/A-Guide-to-DeepLink-(Fast-Travelling-in-Preface))
+    * [See the new deeplink documentation](https://github.com/PLAYERUNKNOWN-Productions/Preface-User-Support/wiki/A-Guide-to-DeepLink-(Fast-Travelling-in-Preface))
 * PST-2504 - Improve unsupported hardware and OS detection and user-facing messaging
 
 ### Fixes
 
 * Windowing
-  * PST-2461 - Prevent mouse being captured in full screen mode with DPI scaling
-  * PST-2462 - Handle updating UI hitboxes when switching to Borderless Fullscreen from Exclusive Fullscreen with a non-desktop resolution
-  * PST-2440 - Fix Preface logo getting drawn before ui scaling is calculated
+    * PST-2461 - Prevent mouse being captured in full screen mode with DPI scaling
+    * PST-2462 - Handle updating UI hitboxes when switching to Borderless Fullscreen from Exclusive Fullscreen with a non-desktop resolution
+    * PST-2440 - Fix Preface logo getting drawn before ui scaling is calculated
 * Logging
-  * Ensure the last line of logs is always added to output
+    * Ensure the last line of logs is always added to output
 * Performance
-  * Fix memory leak in and optimize `string_builder`
-  * PST-2470 - Prevent new waypoints requests during flight and ensure they are streamed in when landing
+    * Fix memory leak in and optimize `string_builder`
+    * PST-2470 - Prevent new waypoints requests during flight and ensure they are streamed in when landing
 * Crashes
-  * PST-2447 - Fix render model load crash
-    * When a model is no longer used, don't destroy its resources if an async job is working on processing textures for it
+    * PST-2447 - Fix render model load crash
+        * When a model is no longer used, don't destroy its resources if an async job is working on processing textures for it
 * Troubleshooting
-  * `reset_preface.bat` now also deletes the shader cache
-    * This works around an issue where occasionally the cache could be corrupted
+    * `reset_preface.bat` now also deletes the shader cache
+        * This works around an issue where occasionally the cache could be corrupted
 
 ## v0.1.2
 Day 1 Patch
 
 ### Features
+
 * Auto-walk is now auto-run
 
 ### Fixes
+
 Flight Animation:
+
 * Fix a bug where when the distance on the geodesic could not be calculated, the animation would blend to default orientation
 * The helicopter animation now hovers above the target location until the target position is known precisely
 
 Backend and Analytics:
+
 * Fix curl tasks being reused whilst being executed on the worker thread
 * Retry authentication/connection to the waypoint server every 30 seconds, don't just give up at start time
 * Avoid truncating crash logs for GPU crashes 
 
 Crashes:
+
 * Fix a crash when changing borderless → full-screen and using Alt+Tab
 
 UX:
+
 * Fix main display screen being saved as screen mode
 * Fix some UI elements calculating scaling incorrectly
 * Adjust UI element positions
 * Improve user messaging when (failing to) use integrated graphics cards
 
 Assets:
+
 * Improve UV seams on the Beech Tree
 
 Performance:
+
 * Optimize GPU vertex cache usage with indexed buffers for some object types
 
 Audio:
+
 * Play correct sound effect when creating a postcard with periscope view active
 
 ## v0.1.1

@@ -1,5 +1,49 @@
 # Changelog
 
+## v0.4.1 Changelog
+
+### Known Issues
+
+* Performance drop when ray tracing is enabled while standing near a waypoint
+
+### Features
+
+* Improved shadow performance at dusk and dawn (up to 60% faster)
+* Improved DX12 resource cleanup performance
+
+### Fixes
+
+* Fixes ocean animation consistency at varying framerates
+* Fixes visual noise in ray tracing during darker hours
+* Fixes visual artifacts at coastlines
+* Fixes notifications not loading properly in the escape menu
+* Fixes stale user config issues - configs based on older engine versions are now automatically discarded
+
+### Invisible and Upcoming Work
+
+* Boost removal
+  * Completed removal of all Boost dependencies (filesystem, asio, beast, exception, stacktrace, algorithm)
+  * Added replacement utilities (hash helper, toLower, etc.)
+* Render Abstraction Layer (RAL)
+  * Large-scale cleanup across RAL codebase
+* Screen Space Shadows (WIP)
+  * Integrated open source solution
+  * Added user-facing options (currently devgui-only)
+* Population and Gameplay
+  * Entities within the area of interest around a player are now 'real' - groundwork for future gameplay
+  * NPC system scaffolding (character API, movement, steering behaviours)
+  * Sprite rendering system with instanced billboards
+* Prefab and Asset Pipeline
+  * Custom prefab token processing
+  * Asset change notifications and file watcher improvements
+  * Resource API consolidation
+* Networking (WIP)
+  * RPC registry convenience layer
+  * Multiplayer lobby UI refactored
+* JSON and Config
+  * Migrated to nlohmann::json across codebase
+  * Non-throwing JSON parse with better error recovery
+
 ## v0.4.0
 
 ### Features

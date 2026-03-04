@@ -1,5 +1,49 @@
 # Changelog
 
+## v0.4.5
+
+### Features
+
+* Added a new default Earth-size planet with improved terrain, better biome continuity, and richer data layers.
+* Added clouds support and enable clouds, depth fog, and screen-space shadows by default.
+* Added Reset Settings button to discard all user settings.
+
+### Fixes
+
+* Reduced memory pressure during large map loads by loading one basemap at a time.
+* Improved shutdown stability when unloading system DLLs.
+* Fixed deeplink protocol handling when multiple protocols are registered.
+* Fixed rare crash when clicking before UI initializes.
+* Fixed crash when audio category config is missing.
+* Fixed UI button tracking on ultrawide resolutions.
+* Fixed positional audio playback at world locations.
+* Improved ocean shading and terrain seam handling.
+* Removed stale default bookmarks from the devgui bookmarks list.
+
+### Invisible and Upcoming Work
+
+* SwarmDemo (WIP: multi-user demo)
+  * Add faction banners using sprite rendering
+  * Add text sprite component with dedicated render pass and sorting
+  * Add sprite UV rect, screen percentage sizing, and depth modes
+  * Add smooth NPC movement replication with rate limiting
+  * Add multiplayer debug tools for state update history visualization
+* OrbDemo (WIP: art+ml demo)
+  * Add placeholder custom ML agent for OrbDemo (to be replaced later)
+  * Rework ML APIs for elevation/basemap and remove legacy ML API
+  * Support small planets in surface rendering with related basemap/agent changes
+* PrefabViewer (tooling)
+  * Add settings window and packaging improvements
+  * Add fallback model for prefabs that cannot be spawned
+* Add `SuperLauncher.bat` and demo startup/shutdown tests
+* Rendering and data pipeline
+  * Texture system refactors and hot-reloading behind a feature flag
+  * Data reorganization and import/cooking improvements
+ 
+### Known Issues
+
+* Ocean tiles sometimes missing.
+
 ## v0.4.1 Changelog
 
 ### Known Issues

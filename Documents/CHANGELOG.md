@@ -1,5 +1,110 @@
 # Changelog
 
+## v0.5.2
+
+### Known Issues
+
+* Some AMD GPU configurations may still hit rendering or shutdown crashes near the planet surface - investigation is ongoing.
+* Foliage, shrubs, and some population objects may pop, flicker, disappear briefly, or transition late as the camera moves.
+* Some rock assets may appear lower resolution than expected.
+* Some Preface basemap seams may still be visible on the top and bottom planet faces.
+* SwarmDemo's release-supported flow is single-player. Multiplayer, lobby flow, join-in-progress, and networked NPC synchronization are present but experimental.
+* Very large SwarmDemo battles may still hit performance or stability limits.
+
+### Features
+
+#### Preface
+
+* Improve planet visuals with cloud shadows enabled by default, updated cloud lighting and raymarching, refreshed basemap data, and cleaner distant population impostors.
+* Use curated start bookmarks instead of geolocation-based start positions.
+* Highlight new notifications and open the notifications panel when new notifications arrive.
+* Improve population rendering performance and VRAM use by packing population and impostor instance data.
+
+#### OrbDemo
+
+* Release OrbDemo for the first time as a Melba tech demonstration for ML-assisted planet population.
+* Render Orb population from ML basemap and mask channels using Orb-specific surface/shader code, species and cluster lookup tables, and updated Orb population assets.
+* Add the Orb ground-start camera flow, loading overlay, explanatory popup, updated basemaps, and visual tuning for color, clouds, atmosphere, and population readability.
+* Improve OrbDemo performance and distant-object rendering with optimized population mapping and Orb impostors.
+* Increase Orb population density and draw distance by allowing procedural population on larger tiles without visible popping.
+
+#### SwarmDemo and Battle Simulation
+
+* Release SwarmDemo for the first time as a single-player troop battle simulation.
+* Add robot squads that can be spawned, moved, selected, inspected, damaged, killed, and drawn in a ground-facing death pose.
+* Add battle setup save/load, configurable squad placement, unit-state display, and selection indicators.
+* Add robot faction meshes, faction variants, unit prefabs, troop audio, and a Swarm help link.
+* Add Battle Simulation controls for safer camera focus and input-driven simulations.
+* Add character combat simulation support, including steering, collision handling, attacking, dying, and improved target selection.
+* Add on-screen F2 control hints and top-bar Quit entries to OrbDemo and SwarmDemo.
+
+### Fixes
+
+* Fix windowed-mode tooltip placement.
+* Fix hidden UI accepting interactions after it has been hidden.
+* Fix waypoint marker placement, above-water waypoint placement, and waypoint travel audio timing.
+* Fix ocean normal reconstruction and reduce unnecessary ocean instance-data uploads.
+* Fix an ocean/global-shadow-map issue that could show a black rectangle artifact.
+* Fix clouds intersecting with the planet in OrbDemo.
+* Fix high-altitude clouds appearing too bright at night.
+* Fix normal mapping on assets without UV derivatives.
+* Fix global shadow map handling when the sun is directly above the camera.
+* Fix shadow rendering for GLTF models by passing shadow and global-shadow-map values correctly.
+* Fix resource barriers in post-processing.
+* Fix instance rendering for non-main cameras.
+* Fix impostor depth handling so ambient occlusion and shadows line up more cleanly.
+* Fix grass renderer GPU page faults caused by shader requests and population AOI scheduling.
+* Fix SwarmDemo faction colors and reduce render item duplication that could crash large squad setups.
+* Fix Orb basemap cluster assignment and reduce terrain face transition artifacts.
+* Fix excessive Swarm NPC audio noise in large battles.
+* Fix grass in distant transition areas rendering too dark.
+* Fix incorrect green terrain colors near the ocean.
+* Fix sky and cloud clipping caused by invalid sky-pixel ray limits.
+* Fix missing population instances in dense Preface locations by increasing supported population capacity.
+* Fix formations loaded from file in the sandbox not starting.
+* Fix character heading changes so units rotate smoothly and apply angular velocity.
+* Improve texture import errors so unsupported texture types are easier to diagnose.
+
+### Invisible and Upcoming Work
+
+* SwarmDemo scale work
+  * Prototype a dense data-oriented POD/Sandbox simulation path alongside the existing sparse ECS to explore troop-count scaling limits.
+  * Add high-volume simulation samples, double-buffered simulation modes, spatial hashing, elevation sampling, optimized collision/separation, and parallel NPC iteration.
+  * Add a Sandbox execution frame and deferred command buffering for simulation graphs.
+  * Keep health bars, the draggable Battle Simulation toolbar, delayed replicated destruction, and networked NPC/lobby work out of the release-supported path until they are ready.
+* Battle Simulation and Sandbox
+  * Add single entity picking behind the toolbar feature flag.
+  * Add sandbox execution statistics behind a feature flag.
+  * Add a sandbox execution pipeline and supporting viewport, camera, terrain query, and surface-basis math.
+  * Update POD transform context ergonomics and simplify transform definitions.
+* OrbDemo ML and data pipeline
+  * Fork Orb-specific surface and population systems so Orb can evolve its population and shader path independently from Preface.
+  * Add cooked basemap loading, tensor byte-stream storage, basemap import utilities, async asset decoding, deterministic cluster/species/population config generation, and validation tests.  
+  * Keep Orb population AOI entity spawning disabled in the shipped Orb config while the visible demo uses shader-driven population.
+  * Add tensor debug readback so developers can inspect precise ML data values on terrain.
+* Rendering and World
+  * Build cloud-shadow and impostor tooling/debug paths used to tune the shipped visuals without exposing debug modes in the public path.
+  * Enable and fix one-pass camera buffers for occlusion and non-main camera rendering.
+  * Add lake rendering behind the lake feature flag.
+  * Convert impostor configuration from binary to JSON and refresh cooked impostor configs.
+  * Move atmospheric scattering into a clearer module and convert its settings and context to context APIs.
+  * Clean up render memory inspection, resource state handling, global shadow map code, TBN generation, render naming/style, instancing, lighting, probes, tone mapping, cameras, shadow maps, debug views, and render resources.
+  * Keep raytracing LOD and virtual-texture-feedback work out of the public path while raytracing remains disabled in shipped config.
+* Animation and ML
+  * Add skeletal animation runtime groundwork for rig, skin, pose, and bitset assets.
+  * Carry runtime element format information through tensor and tensor-view APIs.
+  * Parse model tensor descriptors and transcode tensor files to the expected format.
+  * Simplify NumPy loading to reduce file buffer copying.
+* Documentation and Tooling
+  * Add Blender tool support for models with no LODs or one LOD.
+  * Update Swarm robot LOD colors, coverage data, audio banks, and source/cooked assets.
+  * Apply CMake and developer-tooling cleanups for intellisense, third-party targets, and internal UI.
+  * Add documentation for lobbies, multi-process execution, in-game voting, crash reporting, authentication, and analytics.
+  * Fix manual build upload target selection.
+  * Add build source grouping and artifact organization updates.
+* Code Style and Refactors
+  * Align names and member casing across rendering, lighting, instancing, scattering, analytics, and related systems.
+
 ## v0.4.5
 
 ### Features
